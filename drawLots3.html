@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>抽籤系統</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            background-color: rgb(34, 162, 119);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* justify-content: center; */
+            /* height: 100vh; */
+            margin: 0;
+        }
+
+        .flex-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .flex-container2 {
+            text-align: center;
+        }
+
+        .flex-container3 {
+            display: flex;
+            /* flex-direction: column; */
+            /* align-items: center; */
+            /* justify-content: center; */
+            /* text-align: center; */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="flex-container">
+        <h1>抽籤系統(ver1.0)</h1>
+    </div>
+    <div class="flex-container2">
+        <label for="participantCount">獎品數量:</label>
+        <input type="number" id="seats" min="1" max="150" step="1" value="76" style="width: 45px;">
+    </div>
+    <div class="flex-container2"> 
+        <label for="participantCount">抽籤人數:</label>
+        <input type="number" id="participantCount" min="1" max="150" step="1" value="1" style="width: 45px;">
+       <br><br>
+        <button id="drawButton">開始抽籤</button>
+        <input type="button" value="畫面清空" onClick="window.location.reload();">
+    </div>
+    <div class="flex-container3">
+        <div>
+            <h2>中獎者編號:</h2>
+            <ul id="winningNumbers"></ul>
+        </div>
+
+        <div style="margin-left: 100px;">
+            <h2>未中獎者編號:</h2>
+            <ul id="nonWinningNumbers"></ul>
+        </div>
+
+    </div>
+    <script>
+        $(document).ready(function () {
+            $("#drawButton").click(function () {
+                // var totalParkingSpaces = 76;
+                var totalParkingSpaces = parseInt($("#seats").val());
+                var participantCount = parseInt($("#participantCount").val());
+
+
+                if(totalParkingSpaces > 150 || participantCount > 150){
+                    alert("數量不可以大於150!");
+                    window.location.reload();
+                }
+
+                // 生成參加人員的編號
+                var participantNumbers = [];
+                for (var i = 1; i <= participantCount; i++) {
+                    participantNumbers.push(i);
+                }
+
+                // 如果人數不足76，補充人員編號
+                if (participantCount < totalParkingSpaces) {
+                    for (var j = participantCount + 1; j <= totalParkingSpaces; j++) {
+                        participantNumbers.push('--');
+                    }
+                }
+
+                // 隨機打亂參加人員的編號
+                for (var k = participantNumbers.length - 1; k > 0; k--) {
+                    var randomIndex = Math.floor(Math.random() * (k + 1));
+                    var temp = participantNumbers[k];
+                    participantNumbers[k] = participantNumbers[randomIndex];
+                    participantNumbers[randomIndex] = temp;
+                }
+
+                // 抽取車位
+                var winningNumbers = participantNumbers.slice(0, totalParkingSpaces);
+                var nonWinningNumbers = participantNumbers.slice(totalParkingSpaces);
+
+                // 顯示中獎者和未中獎者的編號
+                $("#winningNumbers").empty();
+                $("#nonWinningNumbers").empty();
+
+                $.each(winningNumbers, function (index, value) {
+                    var seatNo = index + 1;
+
+                    $("#winningNumbers").append("<li> 獎品 " + seatNo + ' : ' + value + "</li>");
+                });
+
+                $.each(nonWinningNumbers, function (index, value) {
+                    $("#nonWinningNumbers").append("<li>" + value + "</li>");
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
