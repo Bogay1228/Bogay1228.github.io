@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>抽籤系統</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <style>
+        body {
+            background-color: rgb(73, 211, 165);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* justify-content: center; */
+            /* height: 100vh; */
+            margin: 0;
+        }
+
+        .flex-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .flex-container2 {
+            text-align: center;
+        }
+
+        .flex-container3 {
+            display: flex;
+            /* flex-direction: column; */
+            /* align-items: center; */
+            /* justify-content: center; */
+            /* text-align: center; */
+        }
+
+        @media print {
+            .nonPrintArea {
+                display: none !important;
+                /* 打印时显示 */
+            }
+        }
+
+        .printArea {
+            display: flex;
+        }
+
+        .rsArea {
+            width: 300px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="pageee">
+        <div class="nonPrintArea">
+            <div class="flex-container">
+                <h1>Vue練習(抽籤系統ver1.0)</h1>
+            </div>
+            <div class="flex-container2">
+                <label for="participantCount">獎品數量:</label>
+                <input type="number" ref="totalParkingSpacesInput" v-model="totalParkingSpaces" min="1" max="150"
+                    step="1" style="width: 45px;" />
+            </div>
+            <div class="flex-container2">
+                <label for="participantCount">抽籤人數:</label>
+                <input type="number" v-model="participantCount" min="1" max="150" step="1" style="width: 45px;" />
+                <br><br>
+                <button @click="draw">開始抽籤</button>
+                <button @click="reset">清空</button>
+                <button @click="printContent">列印/儲存</button>
+            </div>
+        </div>
+        <div class="flex-container3 ">
+            <div class="printArea">
+                <div class="rsArea">
+                    <h2>中獎者編號:</h2>
+                    <ul>
+                        <li v-for="(value, index) in winningNumbers"> 獎品 {{ index + 1 }} : {{ value }}</li>
+                    </ul>
+                </div>
+                <div class="rsArea">
+                    <h2>未中獎者編號:</h2>
+                    <ul>
+                        <li v-for="value in nonWinningNumbers">{{ value }}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        new Vue({
+            el: '#pageee',
+            data: {
+                totalParkingSpaces: 10,
+                participantCount: 1,
+                winningNumbers: [],
+                nonWinningNumbers: [],
+            },
+            methods: {
+                draw() {
+
+                    var totalParkingSpaces = parseInt(this.totalParkingSpaces);
+                    const participantCount = parseInt(this.participantCount);
+
+                    if (totalParkingSpaces > 150 || participantCount > 150) {
+                        alert("數量不可以大於150!");
+                        this.$nextTick(() => {
+                            this.$refs.totalParkingSpacesInput.focus();
+                        });
+                        return;
+                    }
+
+                    // Generate participant numbers
+                    let participantNumbers = Array.from({ length: participantCount }, (_, i) => i + 1);
+
+                    // Fill remaining spaces if participantCount is less than totalParkingSpaces
+                    if (participantCount < totalParkingSpaces) {
+                        participantNumbers = participantNumbers.concat(Array(totalParkingSpaces - participantCount).fill('--'));
+                    }
+
+                    // Shuffle participantNumbers
+                    for (let k = participantNumbers.length - 1; k > 0; k--) {
+                        const randomIndex = Math.floor(Math.random() * (k + 1));
+                        [participantNumbers[k], participantNumbers[randomIndex]] = [participantNumbers[randomIndex], participantNumbers[k]];
+                    }
+
+                    // Draw winners and non-winners
+                    this.winningNumbers = participantNumbers.slice(0, totalParkingSpaces);
+                    this.nonWinningNumbers = participantNumbers.slice(totalParkingSpaces);
+
+
+
+                },
+                reset() {
+                    this.winningNumbers = [];
+                    this.nonWinningNumbers = [];
+                    this.totalParkingSpaces = 10;
+                    this.participantCount = 1;
+                },
+                printContent() {
+                    window.print();
+                    // const printContent = document.querySelector(".printArea");
+
+                    // const tempDiv = document.createElement('div');
+                    // tempDiv.innerHTML = printContent.innerHTML;
+
+                    // const printWindow = window.open('', '', 'width=600,height=600');
+                    // printWindow.document.open();
+                    // printWindow.document.write('<html><head><title>列印</title></head><body>');
+                    // printWindow.document.write(tempDiv.innerHTML);
+                    // printWindow.document.write('</body></html>');
+                    // printWindow.document.close();
+
+                    // printWindow.onload = function () {
+                    //     printWindow.print();
+                    //     printWindow.close();
+                    // };
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
