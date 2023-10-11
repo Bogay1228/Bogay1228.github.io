@@ -6,15 +6,15 @@
 	<meta http-equiv=X-UA-Compatible>
 	<title>AES加密解密測試</title>
 	<style>
-		.border10{
+		.border10 {
 			border: 2px solid #000;
 			padding: 10px;
 		}
-		.inputBoxHW{
-			width: 750px; 
+
+		.inputBoxHW {
+			width: 750px;
 			height: 20px;
 		}
-
 	</style>
 	<script>
 
@@ -77,7 +77,7 @@
 		}
 
 		//TOS sessionId 測試用
-		function sessionIdEnCode(){
+		function sessionIdEnCode() {
 			var decryptKey = document.getElementById("key0").value;
 			var sourceOrg = document.getElementById("sourceOrg").value;
 			var sourceEncrypted = encrypt(sourceOrg, decryptKey);
@@ -85,7 +85,7 @@
 			document.getElementById("sourceEncdoe").value = encodedURL;
 		}
 
-		function sessionIdDeCode(){
+		function sessionIdDeCode() {
 			var decryptKey = document.getElementById("key0").value;
 			var sourceOrg2 = document.getElementById("sourceOrg2").value;
 			var decodedURL = decodeURIComponent(sourceOrg2);
@@ -93,6 +93,11 @@
 			document.getElementById("sourceDecdoe").value = sourceDecrypted;
 		}
 
+
+		function copyData(inputId) {
+			var dataById =document.getElementById(inputId).value;
+			navigator.clipboard.writeText(dataById);
+		}
 
 	</script>
 
@@ -103,24 +108,27 @@
 	<div id=app></div>
 	<script src=crypto-js.js></script>
 	<script src=pad-pkcs7.js></script>
-	
+
 	<div class="border10">
 		<h1>SessionId加密解密</h1>
 		<h3>AES加密 模式:ECB 填充:Pkcs7</h3>
-		KEY &nbsp;<input id="key0" type="text" style="width: 150px; height: 20px;" value="7ef906d786f422d0" readonly/>(預設為TOS用KEY)
+		KEY &nbsp;<input id="key0" type="text" style="width: 150px; height: 20px;" value="7ef906d786f422d0"
+			readonly />(預設為TOS用KEY)
 		<br><br>
-		<input id="sourceOrg" type="text" class="inputBoxHW" placeholder="要加密的資料"/>
+		<input id="sourceOrg" type="text" class="inputBoxHW" placeholder="要加密的資料" />
 		<button type="button" onclick="sessionIdEnCode()">加密</button>
 		<br>
 		<br>
-		<input id="sourceEncdoe" type="text" class="inputBoxHW" readonly />
+		<input id="sourceEncdoe" type="text" class="inputBoxHW" />
+		<button type="button" onclick="copyData('sourceEncdoe')">複製</button>
 		<br>
 		<br>
-		<input id="sourceOrg2" type="text" class="inputBoxHW" placeholder="要解密的資料"/>
+		<input id="sourceOrg2" type="text" class="inputBoxHW" placeholder="要解密的資料" />
 		<button type="button" onclick="sessionIdDeCode()">解密</button>
 		<br>
 		<br>
-		<input id="sourceDecdoe" type="text" class="inputBoxHW" readonly/>
+		<input id="sourceDecdoe" type="text" class="inputBoxHW" />
+		<button type="button" onclick="copyData('sourceDecdoe')">複製</button>
 		<br>
 		<br>
 		<Input Type="Button" Value="清空" onClick="window.location.reload();">
@@ -128,48 +136,49 @@
 	<br>
 
 	<div class="border10">
-	<h1>AES加密解密測試</h1>
-	<h2>AES加密 模式:ECB 填充:Pkcs7</h2>
-	KEY &nbsp;
-	<input id="key" type="text" style="width: 400px; height: 20px;" value="7ef906d786f422d0" />(預設為TOS用KEY)
-	<br><br>
-	<br>
-	<input id="plain" type="text" class="inputBoxHW" placeholder="要加密的資料"/>
-	<button type="button" onclick="encryptText()">加密</button>
-	<br>
-	<br>
-	<input id="encrypted" type="text" class="inputBoxHW" readonly/>
-	<br>
-	<br>
-	<input id="todecrypt" type="text" class="inputBoxHW" placeholder="要解密的資料"/>
-	<button type="button" onclick="decryptText()">解密</button>
-	<br>
-	<br>
-	<input id="decrypted" type="text" class="inputBoxHW" readonly/>
-	<br>
-	<br>
-	<Input Type="Button" Value="清空" onClick="window.location.reload();">
+		<h1>AES加密解密測試</h1>
+		<h2>AES加密 模式:ECB 填充:Pkcs7</h2>
+		KEY &nbsp;
+		<input id="key" type="text" style="width: 400px; height: 20px;" value="7ef906d786f422d0" />(預設為TOS用KEY)
+		<br><br>
+		<br>
+		<input id="plain" type="text" class="inputBoxHW" placeholder="要加密的資料" />
+		<button type="button" onclick="encryptText()">加密</button>
+		<br>
+		<br>
+		<input id="encrypted" type="text" class="inputBoxHW" readonly />
+		<br>
+		<br>
+		<input id="todecrypt" type="text" class="inputBoxHW" placeholder="要解密的資料" />
+		<button type="button" onclick="decryptText()">解密</button>
+		<br>
+		<br>
+		<input id="decrypted" type="text" class="inputBoxHW" readonly />
+		<br>
+		<br>
+		<Input Type="Button" Value="清空" onClick="window.location.reload();">
 	</div>
 	<br>
 	<div class="border10">
-	<h1>URL編碼/解碼</h1>
-	<input id="urlToEncode" type="text" class="inputBoxHW" placeholder="要編碼的URL" />
-	<button type="button" onclick="encodeURL()">URL編碼</button>
-	<br>
-	<br>
-	<input id="encodedURL" type="text" class="inputBoxHW" readonly />
-	<br>
-	<br>
-	<input id="urlToDecode" type="text" class="inputBoxHW" placeholder="要編碼的URL" />
-	<button type="button" onclick="decodeURL()">URL解碼</button>
-	<br>
-	<br>
-	<input id="decodedURL" type="text" class="inputBoxHW" readonly />
-	<br>
-	<br>
-	<Input Type="Button" Value="清空" onClick="window.location.reload();">
-	</div>	
-    
+		<h1>URL編碼/解碼</h1>
+		<input id="urlToEncode" type="text" class="inputBoxHW" placeholder="要編碼的URL" />
+		<button type="button" onclick="encodeURL()">URL編碼</button>
+		<br>
+		<br>
+		<input id="encodedURL" type="text" class="inputBoxHW" readonly />
+		<br>
+		<br>
+		<input id="urlToDecode" type="text" class="inputBoxHW" placeholder="要編碼的URL" />
+		<button type="button" onclick="decodeURL()">URL解碼</button>
+		<br>
+		<br>
+		<input id="decodedURL" type="text" class="inputBoxHW" readonly />
+		<br>
+		<br>
+		<Input Type="Button" Value="清空" onClick="window.location.reload();">
+	</div>
+
 
 </body>
+
 </html>
