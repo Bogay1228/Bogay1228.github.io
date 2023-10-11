@@ -4,6 +4,7 @@
 <head>
 	<meta charset=utf-8>
 	<meta http-equiv=X-UA-Compatible>
+	<link href="images\pageIcon.ico" rel="shortcut icon" />
 	<title>AES加密解密測試</title>
 	<style>
 		.border10 {
@@ -16,6 +17,9 @@
 			height: 20px;
 		}
 	</style>
+
+	<script src=crypto-js.js></script>
+	<script src=pad-pkcs7.js></script>
 	<script>
 
 		function encryptText() {
@@ -95,7 +99,7 @@
 
 
 		function copyData(inputId) {
-			var dataById =document.getElementById(inputId).value;
+			var dataById = document.getElementById(inputId).value;
 			navigator.clipboard.writeText(dataById);
 		}
 
@@ -106,8 +110,7 @@
 <body>
 
 	<div id=app></div>
-	<script src=crypto-js.js></script>
-	<script src=pad-pkcs7.js></script>
+
 
 	<div class="border10">
 		<h1>SessionId加密解密</h1>
