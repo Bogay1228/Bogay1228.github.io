@@ -1,0 +1,449 @@
+package com.example.demo;
+
+public class AniinaResponse {
+
+	public static String getAniinaResponse(String lastNumer) {
+		String result ="";
+		if("2".equals(lastNumer)) {
+			result="<Tx>\r\n" + 
+					"   <TxHead>\r\n" + 
+					"      <CTF_A_TXN_LEN>0381</CTF_A_TXN_LEN>\r\n" + 
+					"      <CTF_A_TXN_ID_CODE>AIINA</CTF_A_TXN_ID_CODE>\r\n" + 
+					"      <CTF_A_TXN_CHANNEL>AI</CTF_A_TXN_CHANNEL>\r\n" + 
+					"      <CTF_A_HOST_SEQ_NO>0000000</CTF_A_HOST_SEQ_NO>\r\n" + 
+					"      <CTF_A_STAN_NO>1030006664</CTF_A_STAN_NO>\r\n" + 
+					"      <CTF_A_TXN_DATE>20200804</CTF_A_TXN_DATE>\r\n" + 
+					"      <CTF_A_TXN_TIME>145126</CTF_A_TXN_TIME>\r\n" + 
+					"      <CTF_A_TERM_ID>MB887201</CTF_A_TERM_ID>\r\n" + 
+					"      <CTF_A_BUSI_DATE>20200804</CTF_A_BUSI_DATE>\r\n" + 
+					"      <CTF_A_ATMP_MODE>0</CTF_A_ATMP_MODE>\r\n" + 
+					"      <CTF_A_FISC_MODE>0</CTF_A_FISC_MODE>\r\n" + 
+					"      <CTF_A_RTN_CODE>0000</CTF_A_RTN_CODE>\r\n" + 
+					"      <CTF_A_SEND_BANK>1030000</CTF_A_SEND_BANK>\r\n" + 
+					"      <CTF_A_RECV_BANK>1030000</CTF_A_RECV_BANK>\r\n" + 
+					"      <CTF_A_FILLER />\r\n" + 
+					"      <CLIENT_IP />\r\n" + 
+					"      <SERVER_IP />\r\n" + 
+					"      <VERSION />\r\n" + 
+					"   </TxHead>\r\n" + 
+					"   <TxBody>\r\n" + 
+					"      <CUS_IDN>Y100736961</CUS_IDN>\r\n" + 
+					"      <IPMSET_CODE />\r\n" + 
+					"      <LAST_NUMBER />\r\n" + 
+					"      <END_KEY>END</END_KEY>\r\n" + 
+					"      <TxRepeat>\r\n" + 
+					"         <IPMSET_CODE>TEST1</IPMSET_CODE>\r\n" + 
+					"         <REF_NO>095FG006925</REF_NO>\r\n" + 
+					"         <TRUST_TYPE>1</TRUST_TYPE>\r\n" + 
+					"         <BANK_PRO_CODE>9423</BANK_PRO_CODE>\r\n" + 
+					"         <INVEST_AMT>000000018000000</INVEST_AMT>\r\n" + 
+					"         <INVEST_UNIT>0000000023076920</INVEST_UNIT>\r\n" + 
+					"         <REF_NET_DATE>20200804</REF_NET_DATE>\r\n" + 
+					"         <REF_NET_VALUE>0000230000</REF_NET_VALUE>\r\n" + 
+					"         <REF_EXRATE_DATE>20200804</REF_EXRATE_DATE>\r\n" + 
+					"         <REF_EXRATE>00029964000</REF_EXRATE>\r\n" + 
+					"         <MKT_AMT_FC>000000005307692</MKT_AMT_FC>\r\n" + 
+					"         <MKT_AMT_LC>000000159039700</MKT_AMT_LC>\r\n" + 
+					"         <TRUST_KIND>Y</TRUST_KIND>\r\n" + 
+					"         <TRUST_CCY>USD</TRUST_CCY>\r\n" + 
+					"         <AMT_IN_TRANSIT>000000000000000</AMT_IN_TRANSIT>\r\n" + 
+					"         <PRE_OUT_AMT>000000000000000</PRE_OUT_AMT>\r\n" + 
+					"         <PRE_OUT_UNIT>000000000000</PRE_OUT_UNIT>\r\n" + 
+					"         <PRICING_CCY>USD</PRICING_CCY>\r\n" + 
+					"         <URETURN_DIVIDEND_FC_IND>-</URETURN_DIVIDEND_FC_IND>\r\n" + 
+					"         <URETURN_DIVIDEND_FC>00070513</URETURN_DIVIDEND_FC>\r\n" + 
+					"         <URETURN_FC_IND>-</URETURN_FC_IND>\r\n" + 
+					"         <URETURN_FC>00070513</URETURN_FC>\r\n" + 
+					"         <IPM_INVEST_AMT>000000018000000</IPM_INVEST_AMT>\r\n" + 
+					"         <TX_YN>Y</TX_YN>\r\n" + 
+					"         <DIVIDEND_AMT>000000000000000</DIVIDEND_AMT>\r\n" + 
+					"      </TxRepeat>\r\n" + 
+					"      <TxRepeat>\r\n" + 
+					"         <IPMSET_CODE>TEST2</IPMSET_CODE>\r\n" + 
+					"         <REF_NO>095FG00777</REF_NO>\r\n" + 
+					"         <TRUST_TYPE>1</TRUST_TYPE>\r\n" + 
+					"         <BANK_PRO_CODE>4307</BANK_PRO_CODE>\r\n" + 
+					"         <INVEST_AMT>000000018000000</INVEST_AMT>\r\n" + 
+					"         <INVEST_UNIT>0000000023076920</INVEST_UNIT>\r\n" + 
+					"         <REF_NET_DATE>20200804</REF_NET_DATE>\r\n" + 
+					"         <REF_NET_VALUE>0000230000</REF_NET_VALUE>\r\n" + 
+					"         <REF_EXRATE_DATE>20200804</REF_EXRATE_DATE>\r\n" + 
+					"         <REF_EXRATE>00029964000</REF_EXRATE>\r\n" + 
+					"         <MKT_AMT_FC>000000005307692</MKT_AMT_FC>\r\n" + 
+					"         <MKT_AMT_LC>000000159039700</MKT_AMT_LC>\r\n" + 
+					"         <TRUST_KIND>Y</TRUST_KIND>\r\n" + 
+					"         <TRUST_CCY>USD</TRUST_CCY>\r\n" + 
+					"         <AMT_IN_TRANSIT>000000000000000</AMT_IN_TRANSIT>\r\n" + 
+					"         <PRE_OUT_AMT>000000000000000</PRE_OUT_AMT>\r\n" + 
+					"         <PRE_OUT_UNIT>000000000000</PRE_OUT_UNIT>\r\n" + 
+					"         <PRICING_CCY>USD</PRICING_CCY>\r\n" + 
+					"         <URETURN_DIVIDEND_FC_IND>-</URETURN_DIVIDEND_FC_IND>\r\n" + 
+					"         <URETURN_DIVIDEND_FC>00070513</URETURN_DIVIDEND_FC>\r\n" + 
+					"         <URETURN_FC_IND>-</URETURN_FC_IND>\r\n" + 
+					"         <URETURN_FC>00070513</URETURN_FC>\r\n" + 
+					"         <IPM_INVEST_AMT>000000018000000</IPM_INVEST_AMT>\r\n" + 
+					"         <TX_YN>Y</TX_YN>\r\n" + 
+					"         <DIVIDEND_AMT>000000000000000</DIVIDEND_AMT>\r\n" + 
+					"      </TxRepeat>\r\n" + 
+					"      <TxRepeat>\r\n" + 
+					"         <IPMSET_CODE />\r\n" + 
+					"         <REF_NO />\r\n" + 
+					"         <TRUST_TYPE />\r\n" + 
+					"         <BANK_PRO_CODE />\r\n" + 
+					"         <INVEST_AMT />\r\n" + 
+					"         <INVEST_UNIT />\r\n" + 
+					"         <REF_NET_DATE />\r\n" + 
+					"         <REF_NET_VALUE />\r\n" + 
+					"         <REF_EXRATE_DATE />\r\n" + 
+					"         <REF_EXRATE />\r\n" + 
+					"         <MKT_AMT_FC />\r\n" + 
+					"         <MKT_AMT_LC />\r\n" + 
+					"         <TRUST_KIND />\r\n" + 
+					"         <TRUST_CCY />\r\n" + 
+					"         <AMT_IN_TRANSIT />\r\n" + 
+					"         <PRE_OUT_AMT />\r\n" + 
+					"         <PRE_OUT_UNIT />\r\n" + 
+					"         <PRICING_CCY />\r\n" + 
+					"         <URETURN_DIVIDEND_FC_IND />\r\n" + 
+					"         <URETURN_DIVIDEND_FC />\r\n" + 
+					"         <URETURN_FC_IND />\r\n" + 
+					"         <URETURN_FC />\r\n" + 
+					"         <IPM_INVEST_AMT />\r\n" + 
+					"         <TX_YN />\r\n" + 
+					"         <DIVIDEND_AMT />\r\n" + 
+					"      </TxRepeat>\r\n" + 
+					"      <TxRepeat>\r\n" + 
+					"         <IPMSET_CODE />\r\n" + 
+					"         <REF_NO />\r\n" + 
+					"         <TRUST_TYPE />\r\n" + 
+					"         <BANK_PRO_CODE />\r\n" + 
+					"         <INVEST_AMT />\r\n" + 
+					"         <INVEST_UNIT />\r\n" + 
+					"         <REF_NET_DATE />\r\n" + 
+					"         <REF_NET_VALUE />\r\n" + 
+					"         <REF_EXRATE_DATE />\r\n" + 
+					"         <REF_EXRATE />\r\n" + 
+					"         <MKT_AMT_FC />\r\n" + 
+					"         <MKT_AMT_LC />\r\n" + 
+					"         <TRUST_KIND />\r\n" + 
+					"         <TRUST_CCY />\r\n" + 
+					"         <AMT_IN_TRANSIT />\r\n" + 
+					"         <PRE_OUT_AMT />\r\n" + 
+					"         <PRE_OUT_UNIT />\r\n" + 
+					"         <PRICING_CCY />\r\n" + 
+					"         <URETURN_DIVIDEND_FC_IND />\r\n" + 
+					"         <URETURN_DIVIDEND_FC />\r\n" + 
+					"         <URETURN_FC_IND />\r\n" + 
+					"         <URETURN_FC />\r\n" + 
+					"         <IPM_INVEST_AMT />\r\n" + 
+					"         <TX_YN />\r\n" + 
+					"         <DIVIDEND_AMT />\r\n" + 
+					"      </TxRepeat>\r\n" + 
+					"      <TxRepeat>\r\n" + 
+					"         <IPMSET_CODE />\r\n" + 
+					"         <REF_NO />\r\n" + 
+					"         <TRUST_TYPE />\r\n" + 
+					"         <BANK_PRO_CODE />\r\n" + 
+					"         <INVEST_AMT />\r\n" + 
+					"         <INVEST_UNIT />\r\n" + 
+					"         <REF_NET_DATE />\r\n" + 
+					"         <REF_NET_VALUE />\r\n" + 
+					"         <REF_EXRATE_DATE />\r\n" + 
+					"         <REF_EXRATE />\r\n" + 
+					"         <MKT_AMT_FC />\r\n" + 
+					"         <MKT_AMT_LC />\r\n" + 
+					"         <TRUST_KIND />\r\n" + 
+					"         <TRUST_CCY />\r\n" + 
+					"         <AMT_IN_TRANSIT />\r\n" + 
+					"         <PRE_OUT_AMT />\r\n" + 
+					"         <PRE_OUT_UNIT />\r\n" + 
+					"         <PRICING_CCY />\r\n" + 
+					"         <URETURN_DIVIDEND_FC_IND />\r\n" + 
+					"         <URETURN_DIVIDEND_FC />\r\n" + 
+					"         <URETURN_FC_IND />\r\n" + 
+					"         <URETURN_FC />\r\n" + 
+					"         <IPM_INVEST_AMT />\r\n" + 
+					"         <TX_YN />\r\n" + 
+					"         <DIVIDEND_AMT />\r\n" + 
+					"      </TxRepeat>\r\n" + 
+					"      <TxRepeat>\r\n" + 
+					"         <IPMSET_CODE />\r\n" + 
+					"         <REF_NO />\r\n" + 
+					"         <TRUST_TYPE />\r\n" + 
+					"         <BANK_PRO_CODE />\r\n" + 
+					"         <INVEST_AMT />\r\n" + 
+					"         <INVEST_UNIT />\r\n" + 
+					"         <REF_NET_DATE />\r\n" + 
+					"         <REF_NET_VALUE />\r\n" + 
+					"         <REF_EXRATE_DATE />\r\n" + 
+					"         <REF_EXRATE />\r\n" + 
+					"         <MKT_AMT_FC />\r\n" + 
+					"         <MKT_AMT_LC />\r\n" + 
+					"         <TRUST_KIND />\r\n" + 
+					"         <TRUST_CCY />\r\n" + 
+					"         <AMT_IN_TRANSIT />\r\n" + 
+					"         <PRE_OUT_AMT />\r\n" + 
+					"         <PRE_OUT_UNIT />\r\n" + 
+					"         <PRICING_CCY />\r\n" + 
+					"         <URETURN_DIVIDEND_FC_IND />\r\n" + 
+					"         <URETURN_DIVIDEND_FC />\r\n" + 
+					"         <URETURN_FC_IND />\r\n" + 
+					"         <URETURN_FC />\r\n" + 
+					"         <IPM_INVEST_AMT />\r\n" + 
+					"         <TX_YN />\r\n" + 
+					"         <DIVIDEND_AMT />\r\n" + 
+					"      </TxRepeat>\r\n" + 
+					"      <TxRepeat>\r\n" + 
+					"         <IPMSET_CODE />\r\n" + 
+					"         <REF_NO />\r\n" + 
+					"         <TRUST_TYPE />\r\n" + 
+					"         <BANK_PRO_CODE />\r\n" + 
+					"         <INVEST_AMT />\r\n" + 
+					"         <INVEST_UNIT />\r\n" + 
+					"         <REF_NET_DATE />\r\n" + 
+					"         <REF_NET_VALUE />\r\n" + 
+					"         <REF_EXRATE_DATE />\r\n" + 
+					"         <REF_EXRATE />\r\n" + 
+					"         <MKT_AMT_FC />\r\n" + 
+					"         <MKT_AMT_LC />\r\n" + 
+					"         <TRUST_KIND />\r\n" + 
+					"         <TRUST_CCY />\r\n" + 
+					"         <AMT_IN_TRANSIT />\r\n" + 
+					"         <PRE_OUT_AMT />\r\n" + 
+					"         <PRE_OUT_UNIT />\r\n" + 
+					"         <PRICING_CCY />\r\n" + 
+					"         <URETURN_DIVIDEND_FC_IND />\r\n" + 
+					"         <URETURN_DIVIDEND_FC />\r\n" + 
+					"         <URETURN_FC_IND />\r\n" + 
+					"         <URETURN_FC />\r\n" + 
+					"         <IPM_INVEST_AMT />\r\n" + 
+					"         <TX_YN />\r\n" + 
+					"         <DIVIDEND_AMT />\r\n" + 
+					"      </TxRepeat>\r\n" + 
+					"   </TxBody>\r\n" + 
+					"</Tx>";
+		}else {
+			result =
+					"<Tx>\r\n" + 
+					"   <TxHead>\r\n" + 
+					"      <CTF_A_TXN_LEN>0381</CTF_A_TXN_LEN>\r\n" + 
+					"      <CTF_A_TXN_ID_CODE>AIINA</CTF_A_TXN_ID_CODE>\r\n" + 
+					"      <CTF_A_TXN_CHANNEL>AI</CTF_A_TXN_CHANNEL>\r\n" + 
+					"      <CTF_A_HOST_SEQ_NO>0000000</CTF_A_HOST_SEQ_NO>\r\n" + 
+					"      <CTF_A_STAN_NO>1030006664</CTF_A_STAN_NO>\r\n" + 
+					"      <CTF_A_TXN_DATE>20200804</CTF_A_TXN_DATE>\r\n" + 
+					"      <CTF_A_TXN_TIME>145126</CTF_A_TXN_TIME>\r\n" + 
+					"      <CTF_A_TERM_ID>MB887201</CTF_A_TERM_ID>\r\n" + 
+					"      <CTF_A_BUSI_DATE>20200804</CTF_A_BUSI_DATE>\r\n" + 
+					"      <CTF_A_ATMP_MODE>0</CTF_A_ATMP_MODE>\r\n" + 
+					"      <CTF_A_FISC_MODE>0</CTF_A_FISC_MODE>\r\n" + 
+					"      <CTF_A_RTN_CODE>0000</CTF_A_RTN_CODE>\r\n" + 
+					"      <CTF_A_SEND_BANK>1030000</CTF_A_SEND_BANK>\r\n" + 
+					"      <CTF_A_RECV_BANK>1030000</CTF_A_RECV_BANK>\r\n" + 
+					"      <CTF_A_FILLER />\r\n" + 
+					"      <CLIENT_IP />\r\n" + 
+					"      <SERVER_IP />\r\n" + 
+					"      <VERSION />\r\n" + 
+					"   </TxHead>\r\n" + 
+					"   <TxBody>\r\n" + 
+					"      <CUS_IDN>Y100736961</CUS_IDN>\r\n" + 
+					"      <IPMSET_CODE />\r\n" + 
+					"      <LAST_NUMBER>2</LAST_NUMBER>\r\n" + 
+					"      <END_KEY></END_KEY>\r\n" + 
+					"      <TxRepeat>\r\n" + 
+					"         <IPMSET_CODE>TEST11</IPMSET_CODE>\r\n" + 
+					"         <REF_NO>095FG006925</REF_NO>\r\n" + 
+					"         <TRUST_TYPE>1</TRUST_TYPE>\r\n" + 
+					"         <BANK_PRO_CODE>58C0</BANK_PRO_CODE>\r\n" + 
+					"         <INVEST_AMT>000000018000000</INVEST_AMT>\r\n" + 
+					"         <INVEST_UNIT>0000000023076920</INVEST_UNIT>\r\n" + 
+					"         <REF_NET_DATE>20200804</REF_NET_DATE>\r\n" + 
+					"         <REF_NET_VALUE>0000230000</REF_NET_VALUE>\r\n" + 
+					"         <REF_EXRATE_DATE>20200804</REF_EXRATE_DATE>\r\n" + 
+					"         <REF_EXRATE>00029964000</REF_EXRATE>\r\n" + 
+					"         <MKT_AMT_FC>000000005307692</MKT_AMT_FC>\r\n" + 
+					"         <MKT_AMT_LC>000000159039700</MKT_AMT_LC>\r\n" + 
+					"         <TRUST_KIND>Y</TRUST_KIND>\r\n" + 
+					"         <TRUST_CCY>USD</TRUST_CCY>\r\n" + 
+					"         <AMT_IN_TRANSIT>000000000000000</AMT_IN_TRANSIT>\r\n" + 
+					"         <PRE_OUT_AMT>000000000000000</PRE_OUT_AMT>\r\n" + 
+					"         <PRE_OUT_UNIT>000000000000</PRE_OUT_UNIT>\r\n" + 
+					"         <PRICING_CCY>USD</PRICING_CCY>\r\n" + 
+					"         <URETURN_DIVIDEND_FC_IND>-</URETURN_DIVIDEND_FC_IND>\r\n" + 
+					"         <URETURN_DIVIDEND_FC>00070513</URETURN_DIVIDEND_FC>\r\n" + 
+					"         <URETURN_FC_IND>-</URETURN_FC_IND>\r\n" + 
+					"         <URETURN_FC>00070513</URETURN_FC>\r\n" + 
+					"         <IPM_INVEST_AMT>000000018000000</IPM_INVEST_AMT>\r\n" + 
+					"         <TX_YN>Y</TX_YN>\r\n" + 
+					"         <DIVIDEND_AMT>000000000000000</DIVIDEND_AMT>\r\n" + 
+					"      </TxRepeat>\r\n" + 
+					"      <TxRepeat>\r\n" + 
+					"         <IPMSET_CODE>TEST22</IPMSET_CODE>\r\n" + 
+					"         <REF_NO>095FG00777</REF_NO>\r\n" + 
+					"         <TRUST_TYPE>1</TRUST_TYPE>\r\n" + 
+					"         <BANK_PRO_CODE>6002</BANK_PRO_CODE>\r\n" + 
+					"         <INVEST_AMT>000000018000000</INVEST_AMT>\r\n" + 
+					"         <INVEST_UNIT>0000000023076920</INVEST_UNIT>\r\n" + 
+					"         <REF_NET_DATE>20200804</REF_NET_DATE>\r\n" + 
+					"         <REF_NET_VALUE>0000230000</REF_NET_VALUE>\r\n" + 
+					"         <REF_EXRATE_DATE>20200804</REF_EXRATE_DATE>\r\n" + 
+					"         <REF_EXRATE>00029964000</REF_EXRATE>\r\n" + 
+					"         <MKT_AMT_FC>000000005307692</MKT_AMT_FC>\r\n" + 
+					"         <MKT_AMT_LC>000000159039700</MKT_AMT_LC>\r\n" + 
+					"         <TRUST_KIND>Y</TRUST_KIND>\r\n" + 
+					"         <TRUST_CCY>USD</TRUST_CCY>\r\n" + 
+					"         <AMT_IN_TRANSIT>000000000000000</AMT_IN_TRANSIT>\r\n" + 
+					"         <PRE_OUT_AMT>000000000000000</PRE_OUT_AMT>\r\n" + 
+					"         <PRE_OUT_UNIT>000000000000</PRE_OUT_UNIT>\r\n" + 
+					"         <PRICING_CCY>USD</PRICING_CCY>\r\n" + 
+					"         <URETURN_DIVIDEND_FC_IND>-</URETURN_DIVIDEND_FC_IND>\r\n" + 
+					"         <URETURN_DIVIDEND_FC>00070513</URETURN_DIVIDEND_FC>\r\n" + 
+					"         <URETURN_FC_IND>-</URETURN_FC_IND>\r\n" + 
+					"         <URETURN_FC>00070513</URETURN_FC>\r\n" + 
+					"         <IPM_INVEST_AMT>000000018000000</IPM_INVEST_AMT>\r\n" + 
+					"         <TX_YN>Y</TX_YN>\r\n" + 
+					"         <DIVIDEND_AMT>000000000000000</DIVIDEND_AMT>\r\n" + 
+					"      </TxRepeat>\r\n" + 
+					"      <TxRepeat>\r\n" + 
+					"         <IPMSET_CODE />\r\n" + 
+					"         <REF_NO />\r\n" + 
+					"         <TRUST_TYPE />\r\n" + 
+					"         <BANK_PRO_CODE />\r\n" + 
+					"         <INVEST_AMT />\r\n" + 
+					"         <INVEST_UNIT />\r\n" + 
+					"         <REF_NET_DATE />\r\n" + 
+					"         <REF_NET_VALUE />\r\n" + 
+					"         <REF_EXRATE_DATE />\r\n" + 
+					"         <REF_EXRATE />\r\n" + 
+					"         <MKT_AMT_FC />\r\n" + 
+					"         <MKT_AMT_LC />\r\n" + 
+					"         <TRUST_KIND />\r\n" + 
+					"         <TRUST_CCY />\r\n" + 
+					"         <AMT_IN_TRANSIT />\r\n" + 
+					"         <PRE_OUT_AMT />\r\n" + 
+					"         <PRE_OUT_UNIT />\r\n" + 
+					"         <PRICING_CCY />\r\n" + 
+					"         <URETURN_DIVIDEND_FC_IND />\r\n" + 
+					"         <URETURN_DIVIDEND_FC />\r\n" + 
+					"         <URETURN_FC_IND />\r\n" + 
+					"         <URETURN_FC />\r\n" + 
+					"         <IPM_INVEST_AMT />\r\n" + 
+					"         <TX_YN />\r\n" + 
+					"         <DIVIDEND_AMT />\r\n" + 
+					"      </TxRepeat>\r\n" + 
+					"      <TxRepeat>\r\n" + 
+					"         <IPMSET_CODE />\r\n" + 
+					"         <REF_NO />\r\n" + 
+					"         <TRUST_TYPE />\r\n" + 
+					"         <BANK_PRO_CODE />\r\n" + 
+					"         <INVEST_AMT />\r\n" + 
+					"         <INVEST_UNIT />\r\n" + 
+					"         <REF_NET_DATE />\r\n" + 
+					"         <REF_NET_VALUE />\r\n" + 
+					"         <REF_EXRATE_DATE />\r\n" + 
+					"         <REF_EXRATE />\r\n" + 
+					"         <MKT_AMT_FC />\r\n" + 
+					"         <MKT_AMT_LC />\r\n" + 
+					"         <TRUST_KIND />\r\n" + 
+					"         <TRUST_CCY />\r\n" + 
+					"         <AMT_IN_TRANSIT />\r\n" + 
+					"         <PRE_OUT_AMT />\r\n" + 
+					"         <PRE_OUT_UNIT />\r\n" + 
+					"         <PRICING_CCY />\r\n" + 
+					"         <URETURN_DIVIDEND_FC_IND />\r\n" + 
+					"         <URETURN_DIVIDEND_FC />\r\n" + 
+					"         <URETURN_FC_IND />\r\n" + 
+					"         <URETURN_FC />\r\n" + 
+					"         <IPM_INVEST_AMT />\r\n" + 
+					"         <TX_YN />\r\n" + 
+					"         <DIVIDEND_AMT />\r\n" + 
+					"      </TxRepeat>\r\n" + 
+					"      <TxRepeat>\r\n" + 
+					"         <IPMSET_CODE />\r\n" + 
+					"         <REF_NO />\r\n" + 
+					"         <TRUST_TYPE />\r\n" + 
+					"         <BANK_PRO_CODE />\r\n" + 
+					"         <INVEST_AMT />\r\n" + 
+					"         <INVEST_UNIT />\r\n" + 
+					"         <REF_NET_DATE />\r\n" + 
+					"         <REF_NET_VALUE />\r\n" + 
+					"         <REF_EXRATE_DATE />\r\n" + 
+					"         <REF_EXRATE />\r\n" + 
+					"         <MKT_AMT_FC />\r\n" + 
+					"         <MKT_AMT_LC />\r\n" + 
+					"         <TRUST_KIND />\r\n" + 
+					"         <TRUST_CCY />\r\n" + 
+					"         <AMT_IN_TRANSIT />\r\n" + 
+					"         <PRE_OUT_AMT />\r\n" + 
+					"         <PRE_OUT_UNIT />\r\n" + 
+					"         <PRICING_CCY />\r\n" + 
+					"         <URETURN_DIVIDEND_FC_IND />\r\n" + 
+					"         <URETURN_DIVIDEND_FC />\r\n" + 
+					"         <URETURN_FC_IND />\r\n" + 
+					"         <URETURN_FC />\r\n" + 
+					"         <IPM_INVEST_AMT />\r\n" + 
+					"         <TX_YN />\r\n" + 
+					"         <DIVIDEND_AMT />\r\n" + 
+					"      </TxRepeat>\r\n" + 
+					"      <TxRepeat>\r\n" + 
+					"         <IPMSET_CODE />\r\n" + 
+					"         <REF_NO />\r\n" + 
+					"         <TRUST_TYPE />\r\n" + 
+					"         <BANK_PRO_CODE />\r\n" + 
+					"         <INVEST_AMT />\r\n" + 
+					"         <INVEST_UNIT />\r\n" + 
+					"         <REF_NET_DATE />\r\n" + 
+					"         <REF_NET_VALUE />\r\n" + 
+					"         <REF_EXRATE_DATE />\r\n" + 
+					"         <REF_EXRATE />\r\n" + 
+					"         <MKT_AMT_FC />\r\n" + 
+					"         <MKT_AMT_LC />\r\n" + 
+					"         <TRUST_KIND />\r\n" + 
+					"         <TRUST_CCY />\r\n" + 
+					"         <AMT_IN_TRANSIT />\r\n" + 
+					"         <PRE_OUT_AMT />\r\n" + 
+					"         <PRE_OUT_UNIT />\r\n" + 
+					"         <PRICING_CCY />\r\n" + 
+					"         <URETURN_DIVIDEND_FC_IND />\r\n" + 
+					"         <URETURN_DIVIDEND_FC />\r\n" + 
+					"         <URETURN_FC_IND />\r\n" + 
+					"         <URETURN_FC />\r\n" + 
+					"         <IPM_INVEST_AMT />\r\n" + 
+					"         <TX_YN />\r\n" + 
+					"         <DIVIDEND_AMT />\r\n" + 
+					"      </TxRepeat>\r\n" + 
+					"      <TxRepeat>\r\n" + 
+					"         <IPMSET_CODE />\r\n" + 
+					"         <REF_NO />\r\n" + 
+					"         <TRUST_TYPE />\r\n" + 
+					"         <BANK_PRO_CODE />\r\n" + 
+					"         <INVEST_AMT />\r\n" + 
+					"         <INVEST_UNIT />\r\n" + 
+					"         <REF_NET_DATE />\r\n" + 
+					"         <REF_NET_VALUE />\r\n" + 
+					"         <REF_EXRATE_DATE />\r\n" + 
+					"         <REF_EXRATE />\r\n" + 
+					"         <MKT_AMT_FC />\r\n" + 
+					"         <MKT_AMT_LC />\r\n" + 
+					"         <TRUST_KIND />\r\n" + 
+					"         <TRUST_CCY />\r\n" + 
+					"         <AMT_IN_TRANSIT />\r\n" + 
+					"         <PRE_OUT_AMT />\r\n" + 
+					"         <PRE_OUT_UNIT />\r\n" + 
+					"         <PRICING_CCY />\r\n" + 
+					"         <URETURN_DIVIDEND_FC_IND />\r\n" + 
+					"         <URETURN_DIVIDEND_FC />\r\n" + 
+					"         <URETURN_FC_IND />\r\n" + 
+					"         <URETURN_FC />\r\n" + 
+					"         <IPM_INVEST_AMT />\r\n" + 
+					"         <TX_YN />\r\n" + 
+					"         <DIVIDEND_AMT />\r\n" + 
+					"      </TxRepeat>\r\n" + 
+					"   </TxBody>\r\n" + 
+					"</Tx>";
+		}
+		
+		
+		return result;
+	}
+}
