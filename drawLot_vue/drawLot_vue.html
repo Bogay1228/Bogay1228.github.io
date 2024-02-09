@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>抽籤系統</title>
+    <title>抽籤</title>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
     <style>
         body {
@@ -59,7 +59,7 @@
     <div id="pageee">
         <div class="nonPrintArea">
             <div class="flex-container">
-                <h1>Vue練習(抽籤系統ver1.0)</h1>
+                <h1>Vue練習(抽籤ver1.0)</h1>
             </div>
             <div class="flex-container2">
                 <label for="participantCount">獎品數量:</label>
@@ -79,15 +79,32 @@
             <div class="printArea">
                 <div class="rsArea">
                     <h2>中獎者編號:</h2>
-                    <ul>
-                        <li v-for="(value, index) in winningNumbers"> 獎品 {{ index + 1 }} : {{ value }}</li>
-                    </ul>
+                        <!-- <ul>
+                            <li v-for="(value, index) in winningNumbers"> 獎品 {{ index + 1 }} : {{ value }}</li>
+                        </ul> -->
+                    <table style="width: 99%;">
+                        <tr v-for="(value, index) in winningNumbers">
+                            <td style="width: 50%;">
+                                獎品 {{ index + 1 }} : 
+                            </td>
+                            <td style="width: 50%; text-align: left;">
+                                 {{ value }}
+                            </td>
+                        </tr>
+                    </table>
                 </div>
                 <div class="rsArea">
                     <h2>未中獎者編號:</h2>
-                    <ul>
-                        <li v-for="value in nonWinningNumbers">{{ value }}</li>
-                    </ul>
+                    <!-- <ul>
+                        <li v-for="value in lostNumbers">{{ value }}</li>
+                    </ul> -->
+                    <table style="width: 99%;">
+                        <tr v-for="(value, index) in lostNumbers">
+                            <td>
+                                {{ value }}
+                            </td>
+                        </tr>
+                    </table>                    
                 </div>
             </div>
         </div>
@@ -97,16 +114,17 @@
         new Vue({
             el: '#pageee',
             data: {
-                totalParkingSpaces: 10,
-                participantCount: 1,
-                winningNumbers: [],
-                nonWinningNumbers: [],
+               
+                totalParkingSpaces: 10, //獎品總數              
+                participantCount: 1,    //抽獎人數
+                winningNumbers: [],     //中獎
+                lostNumbers: [],  //未中獎
             },
             methods: {
                 draw() {
 
                     var totalParkingSpaces = parseInt(this.totalParkingSpaces);
-                    const participantCount = parseInt(this.participantCount);
+                    var participantCount = parseInt(this.participantCount);
 
                     if (totalParkingSpaces > 150 || participantCount > 150) {
                         alert("數量不可以大於150!");
@@ -132,35 +150,17 @@
 
                     // Draw winners and non-winners
                     this.winningNumbers = participantNumbers.slice(0, totalParkingSpaces);
-                    this.nonWinningNumbers = participantNumbers.slice(totalParkingSpaces);
-
-
-
+                    this.lostNumbers = participantNumbers.slice(totalParkingSpaces);
                 },
                 reset() {
                     this.winningNumbers = [];
-                    this.nonWinningNumbers = [];
+                    this.lostNumbers = [];
                     this.totalParkingSpaces = 10;
                     this.participantCount = 1;
                 },
                 printContent() {
                     window.print();
-                    // const printContent = document.querySelector(".printArea");
-
-                    // const tempDiv = document.createElement('div');
-                    // tempDiv.innerHTML = printContent.innerHTML;
-
-                    // const printWindow = window.open('', '', 'width=600,height=600');
-                    // printWindow.document.open();
-                    // printWindow.document.write('<html><head><title>列印</title></head><body>');
-                    // printWindow.document.write(tempDiv.innerHTML);
-                    // printWindow.document.write('</body></html>');
-                    // printWindow.document.close();
-
-                    // printWindow.onload = function () {
-                    //     printWindow.print();
-                    //     printWindow.close();
-                    // };
+ 
                 }
             }
         });
