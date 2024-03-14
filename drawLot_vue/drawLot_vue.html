@@ -60,15 +60,16 @@
         <div class="nonPrintArea">
             <div class="flex-container">
                 <h1>Vue練習(抽籤ver1.0)</h1>
+                <h3>*此版本目前最大數只能150*</h3>
             </div>
             <div class="flex-container2">
                 <label for="participantCount">獎品數量:</label>
                 <input type="number" ref="totalParkingSpacesInput" v-model="totalParkingSpaces" min="1" max="150"
-                    step="1" style="width: 45px;" />
+                    step="1" style="width: 45px;" pattern="\d*"  />
             </div>
             <div class="flex-container2">
                 <label for="participantCount">抽籤人數:</label>
-                <input type="number" v-model="participantCount" min="1" max="150" step="1" style="width: 45px;" />
+                <input type="number" v-model="participantCount" min="1" max="150" step="1" style="width: 45px;" pattern="\d*"  />
                 <br><br>
                 <button @click="draw">開始抽籤</button>
                 <button @click="reset">清空</button>
